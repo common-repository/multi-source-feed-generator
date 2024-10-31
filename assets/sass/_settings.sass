@@ -1,0 +1,164 @@
+/*
+ *
+ * SETTINGS PAGE
+ * this section contains plugin admin settings page styles
+ *
+ */
+  			
+@media only screen and (min-width : 320px)
+	#cronycle-settings
+		margin: 20px 20px 20px 0
+		
+		.outer
+			padding: 20px 40px
+	
+		main
+			> section
+				background: #fff
+				margin-top: 30px
+				
+				> h3:first-child
+					margin: 0
+					padding: 0 40px
+					border-bottom: 1px solid #ddd
+					background: #fcfcfc
+					height: 38px
+					line-height: 38px
+				
+			> section:first-child
+				+retina-bg("../images","logo-big",png,64,64,"right 30px top 30px",no-repeat)
+				background-color: #fff
+				margin-top: 0
+				
+			h1
+				font-size: 24px
+				font-weight: 400
+				line-height: 1.2em
+				margin-bottom: 50px
+				width: 80%
+				
+				a
+					font-style: italic
+					font-weight: 200
+					text-decoration: none
+					color: #000
+					
+			h3
+				font-size: 16px
+				
+			form
+				div
+					margin: 22px 0
+					
+					&.label-shift
+						margin: 40px 0 22px 0
+						
+						a, button
+							margin: 0 10px 10px 0
+					
+				label, input
+					height: 34px
+					line-height: 34px
+					
+				label
+					font-weight: 600
+					display: block
+					float: left
+					width: 100px
+					
+				input
+					box-shadow: none
+					width: 220px
+					padding: 0 10px
+					
+				.button-primary.button-yellow
+					border: 1px solid $color-yellow
+					background: $color-yellow
+					+add-shadow(0 1px 0 $color-yellow-light inset, 0 1px 0 rgba(0, 0, 0, 0.15))
+					
+					&:hover
+						background: $color-yellow-dark
+			
+		aside
+			font-size: 16px
+			border-top: 6px solid $color-yellow
+			background: #fff
+			
+			> section:first-child
+				padding: 25px
+			
+				h2
+					font-size: 19px
+					font-weight: 600
+					line-height: 1.4
+					text-align: center
+				
+				ul
+					padding: 0
+					margin: 0
+					
+					li
+						padding: 13px 40px 13px 0
+						margin: 0
+						position: relative
+						
+						&::after
+							display: block
+							content: " "
+							width: 32px
+							height: 32px
+							+retina-bg("../images","bullet",png,32,32,center center,no-repeat)
+							position: absolute
+							top: 50%
+							right: 0
+							margin-top: -16px
+							
+				div
+					text-align: center
+					margin: 2em 0 .8em 0
+			
+		.message
+			margin: 15px 0
+			padding: 15px
+			border-radius: 4px
+			text-align: center
+			
+			&.message-error
+				color: #a94442
+				background: #f2dede
+				border: 1px solid #f2dede
+				
+			&.message-success
+				color: #3c763d
+				background: #dff0d8
+				border: 1px solid #d6e9c6
+		
+@media only screen and (min-width : 768px)
+	#cronycle-settings main > section form
+		div.label-shift
+			margin: 40px 0 22px 100px
+			
+		input
+			width: 320px
+
+@media only screen and (min-width : 1024px)
+	#cronycle-settings
+		main
+			float: left
+			width: 500px
+			
+		aside
+			float: left
+			width: 300px
+			margin-left: 18px
+			
+		&.pro main
+			width: 818px
+			
+@media only screen and (min-width : 1200px)
+	#cronycle-settings main
+		width: 660px
+			
+@media only screen and (min-width : 1400px)
+	#cronycle-settings main
+		width: 760px

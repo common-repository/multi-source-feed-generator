@@ -1,0 +1,301 @@
+@CHARSET "UTF-8"
+
+/*
+ *
+ * VARIABLES
+ *
+ */
+ 
+@import colors
+
+/*
+ *
+ * MIXINS
+ *
+ */
+ 
+@import mixins
+
+/*
+ *
+ * ANIMATIONS
+ *
+ */
+ 
+@import animation
+	
+/*
+ *
+ * COMMON STYLES
+ * this section contains common styles
+ *
+ */
+
+.gradient-1
+	+add-gradient(#fec865,#89d0c3)
+
+.gradient-2
+	+add-gradient(#f06b47,#5a3265)
+
+.gradient-3
+	+add-gradient(#84cec4,#1b5b91)
+
+.gradient-4
+	+add-gradient(#f0ece4,#8ad0c5)
+
+.gradient-5
+	+add-gradient(#b94846,#487080)
+
+.gradient-6
+	+add-gradient(#f27281,#8acfc3)
+	
+/*
+ *
+ * COLLECTION FRONTEND
+ * this section contains collection front end page styles
+ *
+ */
+
+.gradient
+	+add-gradient(#fdc866,#8ad0c3)
+
+.cronycle-wrapper
+	background: #f6f6f6
+	border-top: 6px solid $color-yellow
+	padding: 30px 0
+	
+	strong, .powered
+		min-height: 32px
+		line-height: 32px
+		
+	strong
+		display: block
+		margin-bottom: 20px
+		padding-left: 22px
+		font-size: 24px
+		font-weight: 400
+		
+	.powered
+		display: inline-block
+		font-size: 14px
+		+retina-bg("../images","logo-frontend",png,32,32,"right center",no-repeat)
+		padding-right: 40px
+		margin-left: 22px
+
+	.cronycle-slider
+		position: relative
+		clear: both
+		padding: 0 22px
+		
+		> nav a
+			position: absolute
+			z-index: 1010
+			top: 50%
+			margin-top: -16px
+			width: 17px
+			height: 32px
+			+retina-bg("../images","arrows",png,17,32,"left top",no-repeat)
+			text-decoration: none
+			border: none
+			outline: none
+			
+			&.prev
+				left: 2px
+				background-position: 0 0
+				
+			&.next
+				right: 2px
+				+do-transform(rotate(180deg))
+				
+		> div
+			overflow: hidden
+			height: 450px
+			position: relative
+			
+			> div:first-child
+				position: absolute
+				left: 0
+				top: 0
+				width: 100%
+				height: 100%
+				+retina-bg("../images","logo-big",png,64,64,"right 50% top 35%",no-repeat)
+				background-color: rgba(255,255,255,.8)
+				z-index: 1000
+				
+				> span
+					display: block
+					margin: auto
+					font-size: 4px
+					position: absolute
+					top: 0
+					bottom: 0
+					left: 0
+					right: 0
+					text-indent: -9999em
+					border-top: 1em solid $color-yellow-light
+					border-right: 1em solid $color-yellow-light
+					border-bottom: 1em solid $color-yellow-light
+					border-left: 1em solid $color-yellow
+					-webkit-transform: translateZ(0)
+					-ms-transform: translateZ(0)
+					transform: translateZ(0)
+					-webkit-animation: spin 1s infinite linear
+					animation: spin 1s infinite linear
+			
+					&, &:after
+						border-radius: 50%
+						width: 10em
+						height: 10em
+			
+			.cronycle-articles
+				position: relative
+				left: 0
+				top: 0
+				+display-flex
+				+flex-flow(row nowrap)
+				+do-transition(1s ease all)
+				
+				.cronycle-article
+					width: 210px
+					min-width: 210px
+					margin: 8px
+					float: left
+					+add-shadow(0px 0px 7px 0px rgba(0,0,0,0.25))
+					font-size: 14px
+					background: #fff
+					+display-flex
+					+flex-direction(column)
+					-webkit-box-pack: justify
+					-webkit-justify-content: space-between
+					-ms-flex-pack: justify
+					justify-content: space-between
+					
+					> div:first-child
+						> iframe, object, embed, video, div, section
+							max-height: 100px
+							width: 100%
+					
+					> a:first-child
+						height: 100px 
+						overflow: hidden
+						text-align: center
+						display: block
+						
+						&.image
+							background-size: cover
+							backgroud-position: center center
+						
+						&.gradient
+							+display-flex
+							+align-flex-item(center)
+						
+							span
+								font-size: 18px
+								line-height: 1em
+								text-align: center
+								display: block
+								width: 100%
+								padding: 0 10px
+							
+					> h2
+						line-height: 18px
+						margin: .5em 0
+						padding: 0 10px
+						
+						a
+							font-size: 18px
+							font-weight: 400
+							line-height: 1
+							text-decoration: none
+							border: none
+						
+					> p
+						line-height: 1.8
+						color: #999
+						padding: 0 10px
+						margin: 0 0 1.5em 0
+						+flex(3 0 auto)
+
+					div.sources
+						font-size: 11px
+						white-space: nowrap
+						text-overflow: ellipsis
+						overflow: hidden
+						padding: 0 10px 10px 10px
+
+						img
+							width: 15px
+							height: 15px
+
+						a
+							text-decoration: none
+							border: none
+							color: #999
+
+						a.name
+							color: $color-yellow-dark
+							padding: 0 6px 0 0
+
+					> span
+						font-size: 12px
+						line-height: 40px
+						color: #777
+						border-top: 1px solid #ebebeb
+						padding: 0 10px 0 30px
+						position: relative
+		
+						&::before
+							content: " "
+							display: block
+							+retina-bg("../images","icon-clock",png,13,13,"left center",no-repeat)
+							position: absolute
+							left: 10px
+							top: 50%
+							width: 13px
+							height: 13px
+							margin-top: -7px
+							
+	&.v 
+		width: 270px
+		
+		.cronycle-slider
+			> nav a
+				top: auto
+				right: auto
+				left: 50%
+				margin-top: 0
+				margin-left: -8px
+				
+				&.prev
+					top: -40px
+					+do-transform(rotate(90deg))
+					
+				&.next
+					bottom: -40px
+					+do-transform(rotate(-90deg))
+					
+			> div 
+				margin: 40px 0
+				
+				.cronycle-articles
+					+flex-flow(column nowrap)
+					
+@media only screen and (min-width : 980px)					
+	.cronycle-wrapper.h 
+		strong
+			padding-left: 58px
+			
+		.powered
+			float: right
+			margin-right: 50px
+			margin-left: 0
+			
+		.cronycle-slider 
+			padding: 0 50px
+			
+			> nav a
+				&.prev
+					left: 15px
+					
+				&.next
+					right: 15px 

@@ -1,0 +1,82 @@
+<!--#form#-->
+<section id="cronycle-settings" class="{mode}">
+	<main>
+		<section class="outer">
+			<form method="post" action="">
+				<h1>Multi Source Feed Generator <a href="https://cronycle.com" target="_blank">by Cronycle</a></h1>
+				
+				<h3>User Credentials</h3>
+				<p>Add Auth Token from your Cronycle profile page to securely connect (you'll need to do this only once).</p>
+	
+				{messages}
+				
+				<div class="clearfix">
+					<label for="cronycle_auth_token">Auth Token</label>
+					<input type="text" name="cronycle_auth_token" id="cronycle_auth_token" value="{auth_token}" />
+				</div>
+				
+				<div class="label-shift">
+					<button type="submit" name="go" class="button-primary">Save token</button>
+					<a href="https://cronycle.com" target="_blank" class="button-primary button-yellow">Sign up for Cronycle</a>
+				</div>
+			</form>
+		</section>
+		
+		{display_settings}
+	</main>
+	
+	{unblock}
+</section>
+
+<!--#display-settings#-->
+<script>
+<!--
+jQuery(function(){
+	jQuery("#toggle-display-settings").click(function(){
+		var btn = jQuery(this);
+		btn.text("Updating...");
+		jQuery.ajax({
+	        url: ajaxurl,
+	        data: {action:'toggleDisplaySettings','remove_frame':jQuery("#cronycle_display_settings").attr("checked") ? 1 : 0},
+	        success: function(){
+	        	btn.text("Save settings");    	
+	        }
+	    });
+	});
+});
+-->
+</script>
+
+<section>
+	<h3>Display settings</h3>
+	<section class="outer">
+		<input type="checkbox" name="cronycle_display_settings" id="cronycle_display_settings" value="1"{checked} />
+		<label for="cronycle_display_settings">Remove Cronycle  frame on collections (ONLY PRO USERS)</label>
+		<br />
+		<br />
+		<button type="button" id="toggle-display-settings" class="button-primary">Save settings</button>
+	</section>
+</section>
+
+<!--#unblock#-->
+<aside>
+	<section>
+		<img src="" alt="" />
+		<h2>Unlock the  full potential of your Cronycle Collections</h2>
+		<ul>
+			<li>Unlimited feed collections</li>
+			<li>Remove Cronycle branding</li>
+			<li>More styling options</li>
+		</ul>
+	</section>
+	<a href="https://cronycle.com" class="cronycle-button" target="_blank">
+		<span></span>
+		UPGRADE
+	</a>
+</aside>
+
+<!--#error#-->
+<div class="message message-error">{message}</div>
+
+<!--#success#-->
+<div class="message message-success">{message}</div>

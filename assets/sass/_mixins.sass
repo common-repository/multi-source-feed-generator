@@ -1,0 +1,62 @@
+=do-transform($t)
+	-webkit-transform: $t
+	transform: $t
+	
+=do-transition($t)
+	-webkit-transition: $t
+	transition: $t
+	
+=add-shadow($s...)
+	-webkit-box-shadow: $s
+	-moz-box-shadow: $s
+	box-shadow: $s
+	
+=border-box
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	
+=display-flex
+	display: -webkit-flex
+	display: -ms-flexbox
+	display: flex
+	
+=flex-flow($f)
+	-webkit-flex-flow: $f
+	-ms-flex-flow: $f
+	flex-flow: $f
+	
+=flex-direction($d)
+	-webkit-flex-direction: $d 
+	flex-direction: $d
+	box-orient: vertical
+	
+=flex($f)
+	-webkit-box-flex: $f
+	-webkit-flex: $f
+	-ms-flex: $f
+	flex: $f
+	
+=align-flex-item($p)
+	-webkit-box-align: $p
+	-webkit-align-items: $p
+	-ms-flex-align: $p
+	align-items: $p
+	
+=retina-bg( $path, $file, $type, $width, $height, $position, $repeat )
+	background: url( $path + '/' + $file + '.' + $type ) #{$position} #{$repeat}
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+		&
+			background: url( $path + '/2x/' + $file + '.' + $type ) #{$position} #{$repeat}
+			background-size: #{$width}px #{$height}px
+			
+=add-gradient( $color_start : #eee, $color_end : #fff )
+	background: $color_start
+	background: -moz-linear-gradient(-45deg,  $color_start 0%, $color_end 100%)
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$color_start), color-stop(100%,$color_end))
+	background: -webkit-linear-gradient(-45deg,  $color_start 0%,$color_end 100%)
+	background: -o-linear-gradient(-45deg,  $color_start 0%,$color_end 100%)
+	background: -ms-linear-gradient(-45deg,  $color_start 0%,$color_end 100%)
+	background: linear-gradient(135deg,  $color_start 0%,$color_end 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_start', endColorstr='#{$color_end}',GradientType=1 )
+	

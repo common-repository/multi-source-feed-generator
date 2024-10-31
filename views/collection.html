@@ -1,0 +1,32 @@
+<!--#articles#-->
+<script>
+<!--
+angular.element(document).ready(function(){
+	angular.bootstrap( document.getElementById("cronycle-collections-{instance}"), ["cronycle_collections"] );
+});
+-->
+</script>
+
+<div class="cronycle-wrapper {mode}" id="cronycle-collections-{instance}" style="width: {width}; height: {height}" ng-controller="collections" ng-init="init('{id}','{mode}','{instance}','{timestamp}')">
+	{powered}
+	<strong>{collection_name}</strong>
+
+	<div class="cronycle-slider">
+		<nav>
+			<a href="javascript:void(0);" class="prev" ng-click="prev()" ng-show="currentArticle"></a>
+			<a href="javascript:void(0);" class="next" ng-click="next()" ng-hide="listedAll || loading"></a>
+		</nav>
+		<div ng-swipe-{next_action}="next()" ng-swipe-{prev_action}="prev()">
+			<div ng-show="loading">
+				<span></span>
+			</div>
+			<section class="cronycle-articles" ng-model="currentOffset" style="{{currentOffset}}">
+			</section>
+		</div>
+	</div>
+</div>
+
+<!--#powered#-->
+<div class="powered">
+	<a href="https://cronycle.com" target="_blank">Powered by Cronycle</a>
+</div>
